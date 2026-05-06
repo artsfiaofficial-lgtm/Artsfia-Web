@@ -267,7 +267,7 @@ export default function ProductCard({ productId, title, mrp, bdt, status, imgUrl
         {
           isWishlist ? "" :
             <div className="wishListIconCartDiv" onClick={postWishlist}>
-              <img src="./assets/icons/wishlistIconWhite.png" style={{ width: "100%", height: "100%", objectFit: "contain" }} alt="" />
+              <img src="./assets/icons/adafds.png" style={{ width: "100%", height: "100%", objectFit: "contain" }} alt="" />
             </div>
         }
       </div>
