@@ -12,7 +12,7 @@ export default function OrderCard({ refreshFunction, title, imageUrl, idKey, nam
 
     //auth materials
     async function getAuthToken() {
-        const url = 'http://localhost:3000/api/auth/identify'
+        const url = `${process.env.REACT_APP_BACKEND_URL}/api/auth/identify`
         const res = await fetch(url, {
             method: "POST",
             headers: {
@@ -51,7 +51,7 @@ export default function OrderCard({ refreshFunction, title, imageUrl, idKey, nam
         }).then(async (result) => {
             if (result.isConfirmed) {
                 const token = await getAuthToken()
-                const res = await fetch(`http://localhost:3000/api/order/delete/${idKey}`,
+                const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/order/delete/${idKey}`,
                     {
                         method: "DELETE",
                         headers: {
@@ -92,7 +92,7 @@ export default function OrderCard({ refreshFunction, title, imageUrl, idKey, nam
         }).then(async (result) => {
             if (result.isConfirmed) {
                 const token = await getAuthToken()
-                const res = await fetch(`http://localhost:3000/api/order/delete/${idKey}`,
+                const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/order/delete/${idKey}`,
                     {
                         method: "DELETE",
                         headers: {

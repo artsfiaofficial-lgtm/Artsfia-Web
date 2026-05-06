@@ -10,7 +10,7 @@ export default function ClientCard({ clientId, accountStatus, name, phone, email
     //auth check function and get access token
     //const function
     async function getAuthToken() {
-        const url = 'http://localhost:3000/api/auth/identify'
+        const url = `${process.env.REACT_APP_BACKEND_URL}/api/auth/identify`
         const res = await fetch(url, {
             method: "POST",
             headers: {
@@ -52,7 +52,7 @@ export default function ClientCard({ clientId, accountStatus, name, phone, email
                 //firstly get token
                 const token = await getAuthToken()
                 //oppression
-                const res = await fetch(`http://localhost:3000/api/user/delete/${clientId}`, {
+                const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/user/delete/${clientId}`, {
                     method: "DELETE",
                     headers: {
                         'Content-Type': "application/json",
@@ -92,7 +92,7 @@ export default function ClientCard({ clientId, accountStatus, name, phone, email
                 //firstly get token
                 const token = await getAuthToken()
                 //oppression
-                const res = await fetch(`http://localhost:3000/api/user/update/${clientId}`, {
+                const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/user/update/${clientId}`, {
                     method: "PUT",
                     headers: {
                         'Content-Type': "application/json",

@@ -30,7 +30,7 @@ export default function ProductCard({ productTitle, productId, category, imageLi
 
   //auth materials
   async function getAuthToken() {
-    const url = 'http://localhost:3000/api/auth/identify'
+    const url = `${process.env.REACT_APP_BACKEND_URL}/api/auth/identify`
     const res = await fetch(url, {
       method: "POST",
       headers: {
@@ -59,7 +59,7 @@ export default function ProductCard({ productTitle, productId, category, imageLi
   //to get product type
   async function getProductType() {
     const token = await getAuthToken()
-    const url = `http://localhost:3000/api/product/read/${productId}`
+    const url = `${process.env.REACT_APP_BACKEND_URL}/api/product/read/${productId}`
     const res = await fetch(url, {
       method: "GET",
       headers: {
@@ -117,7 +117,7 @@ export default function ProductCard({ productTitle, productId, category, imageLi
     }).then(async (result) => {
       if (result.isConfirmed) {
         const token = await getAuthToken()
-        const res = await fetch(`http://localhost:3000/api/product/delete/${productId}`, {
+        const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/product/delete/${productId}`, {
           method: "DELETE",
           headers: {
             'Content-Type': "application/json",
@@ -166,7 +166,7 @@ export default function ProductCard({ productTitle, productId, category, imageLi
         //get auth token
         const token = await getAuthToken()
         console.log(token)
-        const res = await fetch(`http://localhost:3000/api/product/update/${productId}`, {
+        const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/product/update/${productId}`, {
           method: "PUT",
           headers: {
             'Content-Type': "application/json",
