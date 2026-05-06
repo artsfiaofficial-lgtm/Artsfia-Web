@@ -15,7 +15,7 @@ export default function AdminLogin() {
   //login check function
   function loginAction(){
     if(username.trim()!=='' && password.trim()!==''){
-      if(process.env.REACT_APP_LOGIN_USERNAME === username.toLowerCase().trim() && process.env.REACT_APP_LOGIN_PASSWORD === password.toLowerCase().trim()){
+      if(process.env.REACT_APP_LOGIN_USERNAME.toLowerCase() === username.toLowerCase().trim() && process.env.REACT_APP_LOGIN_PASSWORD.toLowerCase() === password.toLowerCase().trim()){
         Swal.fire("Control panel login successful","Welcome back, Admin!","success")
         localStorage.setItem("artsfiaControlLogin","true")
         navigate('/')
