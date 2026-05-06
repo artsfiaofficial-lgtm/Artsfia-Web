@@ -1,0 +1,2971 @@
+@import url('https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&family=Archivo+Black&family=Caveat:wght@400..700&family=Cinzel+Decorative:wght@400;700;900&family=Della+Respira&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jura:wght@300..700&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Serif+Bengali:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+AU+QLD:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Rubik:ital,wght@0,300..900;1,300..900&family=Satisfy&family=Tiro+Bangla:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+.mainContentBox {
+  background-color: white !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  background-color: rgba(245, 245, 245, 0.678);
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.navbar {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  height: auto;
+  background-color: rgb(255, 255, 255);
+}
+
+.navbarOpenOption {
+  width: 30px;
+  cursor: pointer;
+  height: 30px;
+}
+
+.navLogo {
+  width: auto;
+  height: 60px;
+}
+
+.navSearch {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.navbarOpenOption img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.navLogo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.navSearch img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.asideBar::-webkit-scrollbar{
+  display: none;
+}
+.asideBar {
+  height: 100vh;
+  background-color: white;
+  position: fixed;
+  left: 0;
+  transition: 1s;
+  overflow: scroll;
+  z-index: 6;
+  padding: 20px;
+  padding-bottom: 100px;
+  width: 300px;
+  border-right: 1px solid rgba(209, 209, 209, 0.411);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.8s ease;
+  gap: 20px;
+}
+
+.asideBar.close {
+  transform: translateX(-100%);
+  pointer-events: none;
+}
+
+.asideBar.open {
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.asideHeader {
+  display: flex;
+  width: 100%;
+  align-items: start;
+  justify-content: space-between;
+  height: auto;
+}
+
+.asideHeaderLogoBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.asideHeaderLogoBox {
+  width: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+}
+
+.asideHeaderCloseIconBox {
+  width: 30px;
+  cursor: pointer;
+  height: 30px;
+}
+
+.asideHeaderCloseIconBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.asideBarOptionsBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: auto;
+}
+
+.optionBox {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Quicksand";
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.optionBoxTxtContent {
+  height: auto;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex: 1;
+}
+
+.optionBoxTxtContent {
+  position: relative;
+}
+
+.suggestionBoxULText {
+  list-style: none;
+  font-family: "Poppins";
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  gap: 10px;
+  margin: 0;
+}
+
+.suggestionBoxULText li {
+  border: 1px solid rgb(173, 173, 173);
+  border-radius: 5px;
+}
+
+.optionBoxTxtContent::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ea2175;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 250ms ease-in-out;
+}
+
+.optionBoxTxtContent:hover::after {
+  transform: scaleX(1);
+}
+
+.optionBoxIcon {
+  width: 40px;
+  padding: 4px;
+  height: 40px;
+  flex-shrink: 0;
+}
+
+.optionBoxIcon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.navigationBar {
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: white;
+  position: fixed;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+  gap: 30px;
+  bottom: 0;
+}
+
+.navOption {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  padding: 12px;
+  cursor: pointer;
+  transition: 0.5s;
+  align-items: center;
+  background-color: rgba(219, 219, 219, 0.185);
+}
+
+.navOption img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.navOption:active {
+  transition: 0.5s;
+  background-color: rgba(255, 0, 128, 0.795);
+}
+
+.mainContentBox {
+  margin: auto;
+  width: 100%;
+  padding-top: 80px;
+  height: auto;
+  padding-bottom: 100px;
+}
+
+.firstCarouselBox {
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.firstCarouselBox::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.carouselFirstBox {
+  width: 400px;
+  position: relative;
+  z-index: 1;
+  height: auto;
+}
+
+.carouselFirstBox img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.stuOtmCardsShow {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+}
+
+.eventotmScrollBox {
+  gap: 20px;
+  will-change: transform;
+  padding-right: 20px;
+  animation: scroll-left 40s linear infinite;
+  display: flex;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.category-div {
+  width: 80%;
+  margin-top: 20px !important;
+  height: auto;
+  margin: auto;
+}
+
+.categoryTitle {
+  text-align: center;
+  font-family: "Satisfy", cursive;
+  color: #ea2175;
+  font-size: 30px;
+  font-weight: 550;
+  margin: 0;
+}
+
+.category-box-div {
+  width: 100%;
+  margin-top: 20px;
+  height: auto;
+  display: flex;
+  gap: 15px;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.category-box-design {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: rgb(240, 240, 240);
+  position: relative;
+}
+
+.category-card-image-box {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  z-index: 1;
+}
+
+.category-box-design::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -60%;
+  height: 55%;
+  z-index: 2;
+  pointer-events: none;
+  transition: bottom 0.4s ease;
+
+  background: linear-gradient(to top,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0));
+}
+
+.categoryBtnShow {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  z-index: 3;
+  width: 90%;
+  color: white;
+  font-family: "Quicksand";
+  border: none;
+  cursor: pointer;
+  outline: none;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.158);
+  opacity: 0;
+  margin: auto;
+  transform: translateY(15px);
+  transition: all 0.4s ease;
+}
+
+.category-box-design:hover::after {
+  bottom: 0;
+}
+
+.category-box-design:hover .categoryBtnShow {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.commentSection {
+  width: 90%;
+  margin-top: 20px !important;
+  margin: auto;
+  overflow: hidden;
+  height: auto;
+}
+
+.commentTitle {
+  text-align: center;
+  font-family: "Satisfy", cursive;
+  color: #6b00b3;
+  font-size: 30px;
+  font-weight: 550;
+  margin: 0;
+}
+
+.commentSlideDiv {
+  width: auto;
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  overflow: scroll;
+  height: auto;
+  overflow-x: auto;
+  display: flex;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+.commentSlideDiv::-webkit-scrollbar {
+  display: none;
+}
+
+.comment-card-body {
+  width: 300px;
+  height: 380px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.comment-card-body-image {
+  width: 300px;
+  position: relative;
+  height: 300px;
+  background-color: rgb(241, 241, 241);
+}
+
+.comment-card-body-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(to top,
+      rgb(0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.7) 5%,
+      rgba(0, 0, 0, 0.3) 15%,
+      transparent 30%);
+}
+
+.comment-card-btn-box {
+  width: 300px;
+  height: 80px;
+  padding-right: 20px;
+  justify-content: end;
+  display: flex;
+  align-items: center;
+  background-color: rgb(0, 0, 0);
+}
+
+.ccBtn {
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  background-color: rgb(53, 53, 53);
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-family: "Quicksand";
+  padding-left: 20px;
+  color: rgb(255, 255, 255);
+  padding-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  transition: 1s;
+}
+
+.ccBtn:hover {
+  transition: 1s;
+  background-color: rgb(161, 0, 75);
+}
+
+.ccBtnIcon {
+  width: 30px;
+  height: 30px;
+}
+
+.ccBtnIcon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.scrollLeftTxtDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  margin-top: 10px;
+  height: 30px;
+  transition: 1s;
+  color: black;
+  font-family: "Quicksand";
+  font-size: 12px;
+}
+
+.scrollLeftTxtDiv p {
+  margin: 0;
+  pointer-events: none;
+}
+
+.scrollLeftTxtDiv:hover {
+  gap: 40px;
+  transition: 1s;
+}
+
+.scrollLeftTxtIcon {
+  width: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25px;
+}
+
+.aboutProductDiv {
+  width: 90%;
+  margin: auto;
+  height: auto;
+  margin-top: 10px;
+}
+
+.aboutProductTitle {
+  font-family: "Satisfy", cursive;
+  color: #ea6121;
+  font-size: 30px;
+  font-weight: 550;
+  margin: 0;
+  text-align: center;
+}
+
+.apContentBox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: auto;
+}
+
+.apImageSlideBox {
+  width: 500px;
+  height: auto;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.apDetailsBox {
+  width: 500px;
+  margin-top: 20px;
+  height: auto;
+  background-image: url('../public/assets/logo/shadowLogo.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.apImgSlider {
+  width: 60px;
+  transition: 1s;
+  cursor: pointer;
+  border-radius: 6px;
+  height: 350px;
+  flex: 1;
+  overflow: hidden;
+  transition: all .5s ease;
+}
+
+.apImgSlider:hover {
+  flex: 5;
+  transition: 1s;
+}
+
+.apImgSlider>img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ourProductTitle {
+  font-size: 25px;
+  color: rgba(121, 44, 0, 0.74);
+  ;
+  font-family: "Quicksand";
+  margin: 0;
+  text-align: center;
+}
+
+.ourProductInfoBoxText {
+  font-family: "Della Respira", serif;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+  color: rgba(121, 44, 0, 0.74);
+  text-align: center;
+}
+
+.productShowCaseDiv {
+  width: 85%;
+  margin: auto;
+  margin-top: 20px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.productShowCaseDivHeader {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.productShowCaseDivHeaderLogo {
+  display: flex;
+  width: auto;
+  font-family: "Quicksand";
+  font-weight: 550;
+  font-size: 18px;
+  gap: 10px;
+  height: 40px;
+  justify-content: start;
+  align-items: center;
+}
+
+.productShowCaseDivHeaderLogoImg {
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+}
+
+.productShowCaseDivHeaderLogoImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.productDivSeeAllDiv {
+  width: auto;
+  display: flex;
+  justify-content: center;
+  font-family: "Quicksand";
+  cursor: pointer;
+  color: #ffffff;
+  align-items: center;
+  height: 20px;
+  padding: 10px;
+  border-radius: 25px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #000000;
+}
+
+.productContainer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  overflow: hidden;
+  row-gap: 20px;
+}
+
+.product-card-body {
+  border-radius: 5px;
+  overflow: hidden;
+  width: 150px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.product-card-image-div {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e7e7e7;
+}
+
+.product-card-info {
+  width: 150px;
+  height: auto;
+}
+
+.product-card-info p {
+  font-family: "Poppins";
+}
+
+.productViewBtn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 500;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  gap: 5px;
+  font-family: "Quicksand";
+}
+
+.productDeleteBtnX {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(243, 243, 243);
+  color: rgb(255, 0, 55);
+  border: 1px solid rgb(255, 0, 55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 500;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  gap: 5px;
+  font-family: "Quicksand";
+}
+
+.productViewBtnIcon {
+  width: 25px;
+  height: 25px;
+}
+
+.productViewBtnIcon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.product-card-product-name {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  margin: 0;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 70px;
+  font-family: "Poppins";
+  font-size: 16px;
+}
+
+.cartMrpTaka {
+  margin: 0;
+  color: #646464;
+}
+
+.cartBdtTaka {
+  margin: 0;
+  color: #ff0055;
+}
+
+.wishListIconCartDiv {
+  width: 35px;
+  float: right;
+  cursor: pointer;
+  margin: 5px;
+  transition: 1s;
+  padding: 2px;
+  border-radius: 50%;
+  height: 35px;
+  background-color: #000000;
+}
+
+.wishListIconCartDiv:hover {
+  transition: 1s;
+  background-color: #ea2175;
+}
+
+.videoAndTextBoxDiv {
+  margin-top: 20px !important;
+  display: flex;
+  margin: auto;
+  height: auto;
+  width: 80%;
+}
+
+.animatedTextBox {
+  width: 50%;
+  height: auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.animatedTextBox p {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.788);
+  text-transform: uppercase;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 35px;
+}
+
+.animatedTextShowOverlay {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+  height: 40px;
+  overflow: hidden;
+  position: relative;
+}
+
+.animatedTextShowOverlay p {
+  position: absolute;
+  color: white;
+  width: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(-100%);
+  animation: slideText 6s infinite;
+}
+
+.animatedTextShowOverlay p:nth-child(1) {
+  animation-delay: 0s;
+  background-color: rgb(255, 72, 0);
+}
+
+.animatedTextShowOverlay p:nth-child(2) {
+  animation-delay: 2s;
+  background-color: crimson;
+}
+
+.animatedTextShowOverlay p:nth-child(3) {
+  animation-delay: 4s;
+  background-color: rgb(0, 119, 255);
+}
+
+@keyframes slideText {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  30% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  40% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
+
+
+
+.videoBoxHome {
+  width: 50%;
+  height: auto;
+  flex: 1;
+}
+
+footer {
+  background-color: white;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.footerLogo {
+  width: 100%;
+  height: 80px;
+}
+
+.footerInfo {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  height: auto;
+}
+
+.footerIntroText {
+  height: auto;
+  padding-right: 20px;
+  width: 100%;
+}
+
+.footerIntroText p {
+  margin: 0;
+  text-align: center;
+  font-family: "Della Respira";
+  font-size: 19px;
+  font-weight: 00;
+}
+
+.footerContactInfo {
+  height: auto;
+  width: 100%;
+  padding-left: 20px;
+}
+
+.logoNameFooter {
+  font-family: "Cinzel Decorative";
+  font-size: 40px;
+}
+
+.footerSocial {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footerFb:hover,
+.footerIg:hover,
+.footerWa:hover {
+  color: #ea2175;
+  transition: 0.5s;
+}
+
+.footerFb,
+.footerIg,
+.footerWa {
+  width: auto;
+  transition: 0.5s;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  font-family: "Quicksand";
+  font-weight: 500;
+  cursor: pointer;
+  gap: 10px;
+}
+
+.footerAddress {
+  font-family: "Quicksand";
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.footerSocialIconBox {
+  width: 30px;
+  height: 30px;
+}
+
+.footerSocialIconBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.contactBoxFooter {
+  float: right;
+}
+
+.mobileNumFooter {
+  font-family: "Poppins";
+  margin: 0;
+  margin-top: 5px;
+}
+
+.introFooterOwner,
+.footerOwnerName {
+  margin: 0;
+  font-family: "Poppins";
+}
+
+.footerIntroTitleX {
+  font-size: 25px !important;
+  font-weight: 600;
+}
+
+.searchDivBox {
+  width: 170px;
+  border-radius: 30px;
+  height: auto;
+  background-color: #ffffff;
+  border: 1.5px solid #000000;
+  margin: auto;
+  padding: 5px;
+  transition: 1s;
+  display: flex;
+  gap: 10px;
+  overflow: hidden;
+  margin-top: 20px;
+  animation: expandBox 0.8s ease forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes expandBox {
+  from {
+    width: 170px;
+  }
+
+  to {
+    width: 600px;
+  }
+}
+
+.searchDivBoxIcon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+}
+
+.searchInputBox {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  width: 100%;
+  color: #000000;
+  font-family: "Poppins";
+  flex: 1;
+}
+
+.searchActionBtn {
+  background-color: black;
+  color: white;
+  font-family: "Quicksand";
+  border: none;
+  outline: none;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.searchedItems {
+  width: 90%;
+  margin: auto;
+  padding-left: 20px;
+  height: auto;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+}
+
+.searchedItemHeader {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: "Quicksand";
+  font-weight: 550;
+  font-size: 20px;
+
+}
+
+.searchedItemHeaderIcon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.itemsContainerSearched {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  margin-top: 20px;
+}
+
+.cartTitle {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-family: "Quicksand";
+  font-weight: 550;
+  font-size: 20px;
+  align-items: center;
+  gap: 10px;
+  height: 40px;
+  margin-top: 10px;
+}
+
+.cartHeaderIcon {
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+}
+
+.cartHeaderIcon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.cartHr {
+  margin: 0;
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+  width: 80%;
+  margin: auto;
+}
+
+.cartItemsBox {
+  margin: auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: auto;
+}
+
+.cartCardBody {
+  border: 1px solid rgba(0, 0, 0, 0.205);
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px;
+  height: auto;
+  background-color: #f3f3f3;
+  display: flex;
+}
+
+.imageAndInfoCartCard {
+  width: 100%;
+  height: auto;
+  gap: 10px;
+  display: flex;
+}
+
+.imageCartCardBox {
+  width: 100px;
+  background-color: rgb(226, 226, 226);
+  border-radius: 5px;
+  overflow: hidden;
+  height: 100px;
+}
+
+.imageCartCardBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cartInfoCardBox {
+  flex: 1;
+  width: 100%;
+  height: auto;
+}
+
+.cartCardButtonsDiv {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 0;
+  align-items: center;
+  gap: 10px;
+  height: auto;
+}
+
+.cartDeleteBtn {
+  font-family: "Poppins";
+  color: black;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 1px solid black;
+  background-color: #f3f3f3;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.cartBuyBtn {
+  font-family: "Poppins";
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 25px;
+}
+
+.cartBtnIconBox {
+  width: 30px;
+  height: 30px;
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cartBtnIconBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.cartProductTitle {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0;
+  font-family: "Poppins";
+}
+
+.cartQuantityTitle,
+.cartBangleSizeP,
+.productPerPriceCartP,
+.productCartDeliveryChargeP {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0;
+  font-family: "Poppins";
+}
+
+.productTypeCart,
+.pSShow {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0;
+  font-family: "Poppins";
+}
+
+.cartPriceShow {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0;
+  color: rgb(12, 134, 8);
+  font-family: "Poppins";
+}
+
+.cartDCITitle {
+  font-family: "Quicksand";
+  font-size: 12px;
+}
+
+.wishListTitleBox {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-family: "Quicksand";
+  font-weight: 550;
+  font-size: 20px;
+  align-items: center;
+  gap: 10px;
+  height: 40px;
+  margin-top: 10px;
+}
+
+.profileTitleBox {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-family: "Quicksand";
+  font-weight: 550;
+  font-size: 20px;
+  align-items: center;
+  gap: 10px;
+  height: 40px;
+  margin-top: 10px;
+}
+
+.wishListTitle {
+  margin: 0;
+}
+
+.profileTitle {
+  margin: 0;
+}
+
+.wishListHeaderIcon {
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+}
+
+.profileHeaderIcon {
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+}
+
+.wishlistTitleHr {
+  margin: 0;
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+  width: 80%;
+  margin: auto;
+}
+
+.wishlistItemContainer {
+  width: 80%;
+  height: auto;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.profileInfoContainerBox {
+  margin: auto;
+  background-color: rgb(241, 241, 241);
+  width: 500px;
+  height: auto;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 1px solid rgb(223, 223, 223);
+}
+
+.profileInfoInputBox {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profileInfoFieldBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: auto;
+}
+
+.profileInfoFieldHeader {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  font-family: "Quicksand";
+  font-weight: 550;
+  font-size: 18px;
+  align-items: center;
+  height: 35px;
+}
+
+.profileInfoFieldHeaderIconBox {
+  width: 35px;
+  height: 35px;
+}
+
+.profileInputBoxMain {
+  width: 100%;
+  padding: 7px;
+  border-radius: 5px;
+  font-family: "Poppins";
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none;
+  outline: none;
+}
+
+.profileHomeAddress {
+  font-family: "Poppins";
+  margin: 0;
+}
+
+.profileInfoFieldHeaderIconBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.profileBoxBtns {
+  width: 500px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  height: auto;
+}
+
+.profileBoxBtns button {
+  border: none;
+  outline: none;
+  border-radius: 25px;
+  padding-left: 20px;
+  font-family: "Poppins";
+  padding-right: 20px;
+  padding-top: 5px;
+  color: white;
+  padding-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.pbIcon {
+  width: 30px;
+  height: 30px;
+}
+
+.pbIcon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.profileEditDivBg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 14;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.29);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.profileEditBox {
+  width: 500px;
+  height: 80vh;
+  overflow: scroll;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(7, 7, 7, 0.171);
+  background-color: rgb(255, 255, 255);
+}
+
+.profileEditBox::-webkit-scrollbar {
+  display: none;
+}
+
+.editprofileboxaddress {
+  padding: 10px;
+  border-radius: 5px;
+  font-family: "Poppins";
+  border: 1px solid rgba(0, 0, 0, 0.267);
+}
+
+.modifyBtnProfile {
+  border: none;
+  outline: none;
+  background-color: #000000;
+  color: white;
+  border-radius: 25px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-family: "Poppins";
+}
+
+.editBoxHeaderCross {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  justify-content: end;
+  display: flex;
+}
+
+.crossEditProfileImgBox {
+  width: 35px;
+  height: 35px;
+}
+
+.mainPhotoShowDivView {
+  width: 400px;
+  height: auto;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px !important;
+  overflow: hidden;
+  background-color: #f1f1f1;
+  margin: auto;
+}
+
+.mainPhotoShowDivView img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.sidePhotoShowBox {
+  width: 500px;
+  margin: auto;
+  margin-top: 10px;
+  height: auto;
+  flex-wrap: wrap;
+  display: flex;
+  gap: 10px;
+  row-gap: 10px;
+  justify-content: space-around;
+}
+
+.sidePhotoShowBoxItem {
+  width: 80px;
+  height: auto;
+  cursor: pointer;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: rgb(214, 214, 214);
+}
+
+.sidePhotoShowBoxItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.productInfoViewContainer {
+  width: 500px;
+  margin: auto;
+  height: auto;
+  margin-top: 10px;
+}
+
+.productInfoViewContainerHeader {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: end;
+}
+
+.productInfoViewContainerHeaderTitle {
+  width: auto;
+  height: 30px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Quicksand";
+  font-size: 13px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 25px;
+}
+
+.productInfoViewContainerMain {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: auto;
+}
+
+.productNameView {
+  font-size: 20px;
+}
+
+.productInfoBoxViewMain {
+  margin: auto;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  width: 500px;
+}
+
+.productInfoBoxViewMain p {
+  font-family: "Poppins";
+  margin: 0;
+}
+
+.prevRateView {
+  color: #646464;
+  font-size: 16px;
+}
+
+.mainRateView {
+  color: green;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.productNeedInfoBoxView {
+  width: 500px;
+  margin: auto;
+  margin-top: 10px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.productNeedInfoBoxViewInput {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.productNeedInfoBoxViewInputHeader {
+  width: 100%;
+  font-family: "Poppins";
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 30px;
+}
+
+.productNeedInfoBoxViewInput input {
+  padding-left: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-family: "Poppins";
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.productNeedInfoBoxViewInputHeaderIcon {
+  width: 30px;
+  height: 30px;
+}
+
+.productNeedInfoBoxViewInputHeaderIcon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.productNeedInfoBoxViewInput textarea {
+  padding: 10px;
+  font-family: "Poppins";
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.329);
+}
+
+.pivcmP {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pivcmPrice {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  font-family: "Poppins";
+  justify-content: end;
+  padding-right: 5px;
+  height: 30px;
+  font-size: 18px;
+}
+
+.pivcmInfo {
+  width: 100%;
+  height: 30px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  font-family: "Poppins";
+  padding-left: 5px;
+}
+
+.deliveryChargeNote {
+  margin-left: 5px;
+  font-size: 14px;
+  color: #6b00b3;
+  font-family: "Quicksand";
+  margin-right: 5px;
+}
+
+.productViewBtnsDiv {
+  width: 500px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: auto;
+}
+
+.productViewBtnsDiv button {
+  border: none;
+  outline: none;
+  font-family: "Poppins";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  border-radius: 25px;
+}
+
+.pvbdBtnIcon {
+  width: 30px;
+  height: 30px;
+}
+
+.pvbdBtnIcon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.authContainerBG {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+  align-items: center;
+}
+
+.loginBox {
+  width: 500px;
+  background-color: rgb(248, 248, 248);
+  height: auto;
+  border: 1px solid rgba(0, 0, 0, 0.233);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.loginHeaderBox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+}
+
+.loginHeaderBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.loginText,
+.cnaMainTitle {
+  font-family: "Quicksand";
+  font-weight: 550;
+  font-size: 18px;
+  margin: 0;
+  text-align: center;
+}
+
+.loginInputFields,
+.signupBoxInputFields {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: auto;
+}
+
+.loginFieldMain,
+.signupInputFieldMainBox {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.loginFieldMainHeader,
+.signupInputFieldHeaderBox {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Quicksand";
+  font-weight: 500;
+  font-size: 17px;
+}
+
+.loginFieldMainHeaderIcon,
+.signupInputFieldHeaderBoxIcon {
+  width: 30px;
+  height: 30px;
+}
+
+.signupBoxInputFields {
+  height: 330px;
+  overflow: scroll;
+}
+
+.signupBoxInputFields::-webkit-scrollbar {
+  display: none;
+}
+
+.loginInputRaw,
+.signupInputRaw {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  outline: none;
+  font-family: "Poppins";
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.37);
+}
+
+.logInBtn {
+  border: none;
+  background-color: #000000;
+  color: white;
+  font-family: "Poppins";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 25px;
+}
+
+.cnaTitle {
+  margin: 0;
+  color: black;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: underline;
+  font-family: "Quicksand";
+  font-weight: 500;
+}
+
+.signupBox {
+  width: 500px;
+  background-color: rgb(248, 248, 248);
+  height: auto;
+  border: 1px solid rgba(0, 0, 0, 0.233);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.signupBoxHeader {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+}
+
+.signupBoxHeader img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.scrollAdviceText {
+  text-align: center;
+  font-size: 13px;
+  font-family: "Quicksand";
+  font-weight: 500;
+  color: #000000b4;
+  margin: 0;
+}
+
+.signupBtnBox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cnaBtnMain {
+  width: 100%;
+  border: none;
+  background-color: rgb(0, 0, 0);
+  font-family: "Poppins";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: white;
+  border-radius: 25px;
+}
+
+.btlTitleMain {
+  text-align: center;
+  cursor: pointer;
+  font-family: "Quicksand";
+  font-weight: 500;
+  color: #000000;
+  margin: 0;
+  text-decoration: underline;
+}
+
+.signUpAddressTextArea {
+  padding: 10px;
+  font-family: "Poppins";
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.26);
+}
+
+.cnaBtnMainIcon,
+.loginBtnIconMain {
+  width: 30px;
+  height: 30px;
+}
+
+.authBoxContainer {
+  width: 650px;
+  margin: auto;
+}
+
+.authWelcomeNote {
+  text-align: center;
+  font-size: 40px;
+  margin-top: 10px;
+  font-family: "Cinzel Decorative";
+}
+
+.authNoteMain {
+  font-family: "Poppins";
+  text-align: center;
+  font-size: 18px;
+}
+
+.authActionBtnBox {
+  width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+}
+
+.authActionBtnBox button {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-family: "Poppins";
+}
+
+.authBtnIconDiv {
+  width: 30px;
+  height: 30px;
+}
+
+.authBtnIconDiv img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.not-found-page-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.not-found-code {
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 100px;
+  margin: 0;
+}
+
+.nfText {
+  font-family: "Quicksand";
+  font-size: 25px;
+  font-weight: 550;
+  margin: 0;
+}
+
+.nfNote {
+  text-align: center;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-family: "Quicksand";
+  font-weight: 500;
+}
+
+.nfBtn {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 25px;
+  background-color: #000000;
+  color: white;
+  font-family: "Quicksand";
+  font-weight: 550;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: none;
+}
+
+.nfBtnIcon {
+  width: 30px;
+  height: 30px;
+}
+
+.productAllPageHeaderBox {
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Poppins";
+  font-size: 20px;
+}
+
+.productAllPageHeaderBoxIconBox {
+  width: 40px;
+  height: 40px;
+}
+
+.mainProductListRenderBox {
+  width: 80%;
+  height: auto;
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.swal2-title {
+  font-family: "Quicksand";
+}
+
+.swal2-html-container {
+  font-family: "Quicksand";
+  font-weight: 550;
+}
+
+.swal2-confirm {
+  font-family: "Quicksand";
+  font-weight: 600;
+}
+
+.productStatusShowRawText {
+  width: auto;
+  display: inline;
+  color: white;
+  padding-left: 7px;
+  padding-right: 7px;
+  font-size: 11px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-family: "Quicksand";
+  border-radius: 25px;
+}
+
+.productLoaderBoxHome {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.pVStatusTxtMain {
+  margin: 0;
+  text-align: center;
+  font-size: 22px;
+  font-family: "Poppins";
+  font-weight: 450;
+}
+
+.purchaseLoaderDivBG {
+  background: rgba(158, 158, 158, 0.363);
+  box-shadow: 0 4px 30px rgba(255, 255, 255, 0.808);
+  backdrop-filter: blur(2.7px);
+  -webkit-backdrop-filter: blur(2.7px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 50%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.purchaseLoaderDiv {
+  width: 300px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: rgb(255, 255, 255);
+}
+
+.pLoaderBox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+.pContextLoader {
+  text-align: center;
+  font-family: "Quicksand";
+}
+
+.pContextLoader p {
+  font-weight: 500;
+  margin: 0;
+}
+
+.showEditPassP {
+  margin: 0 !important;
+  font-size: 13px;
+  cursor: pointer;
+  color: #ea2175;
+  font-family: "Quicksand";
+  text-decoration: underline;
+}
+
+.vtpCartCardP {
+  margin: 0 !important;
+  font-family: "Quicksand";
+  font-weight: 500;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 25px;
+  font-size: 13px;
+  cursor: pointer;
+  background-color: rgb(226, 0, 124);
+  color: white;
+}
+
+.cartPUText {
+  font-family: "Poppins";
+  font-size: 18px;
+}
+
+.cartLoaderDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.niEText {
+  text-align: center;
+  font-size: 20px;
+  font-family: "Poppins";
+  margin-top: 20px;
+  color: #ad026c;
+}
+
+.productDetailsImageBG {
+  width: 100%;
+  height: 100vh;
+  background-color: #0000009d;
+  position: fixed;
+  left: 50%;
+  z-index: 995;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.productDetailsImageDiv {
+  display: flex;
+  width: 400px;
+  flex-direction: column;
+  gap: 10px;
+  height: auto;
+}
+
+.productDetailsImageDivHeader {
+  width: 100%;
+  height: 35px;
+  display: flex;
+  justify-content: end;
+}
+
+.productDetailsImageDivHeaderIcon {
+  width: 35px;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  align-items: center;
+  border-radius: 50%;
+  height: 35px;
+}
+
+.productDetailsImageMainBox {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  height: auto;
+}
+
+.productDetailsImageMainBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.videoBoxHome video {
+  width: 100%;
+  height: 100%;
+}
+
+.loginFieldMainHeaderExcept {
+  align-items: center;
+  justify-content: space-between !important;
+}
+
+.spTitleX {
+  font-size: 13px;
+  margin: 0;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.cpyrightTxt {
+  margin: 0;
+  font-size: 13px;
+  color: rgb(119, 119, 119);
+  font-weight: 500;
+  font-family: "Quicksand";
+  text-align: center;
+}
+
+.under500Container {
+  width: 90%;
+  margin-top: 20px !important;
+  margin: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.u5Text {
+  font-family: "Cormorant", serif;
+  color: #000000;
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+}
+
+.under500MainImageBox {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.under500MainBoxOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 0, 0, 0.7);
+  color: white;
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+.under500MainImageBox:hover .under500MainBoxOverlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.under500OverlayBtn {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: transparent;
+  color: white;
+  transition: 1s;
+  font-family: "Quicksand";
+
+  border: 1px solid white;
+}
+
+.under500OverlayBtn:hover {
+  color: black;
+  background-color: white;
+  transition: 1s;
+}
+
+.under500ProductContainer {
+  height: auto;
+  margin: auto;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  overflow: hidden;
+  row-gap: 20px;
+}
+.viewAllBtn{
+  padding-top: 9px;
+  padding-bottom: 7px;
+  background-color: #fcfcfc;
+  color: rgb(0, 0, 0);
+  padding-left: 20px;
+  text-transform: uppercase;
+  padding-right: 20px;
+  border: 1px solid black;
+  font-size: 13px;
+  transition: 0.2s;
+  font-family: "Quicksand";
+}
+.viewAllBtn:hover{
+  background-color: #000000;
+  color: white;
+  transition: 0.2s;
+}
+.viewAllBtn2{
+  padding-top: 9px;
+  padding-bottom: 7px;
+  background-color: white;
+  color: crimson;
+  padding-left: 20px;
+  text-transform: uppercase;
+  padding-right: 20px;
+  border: 1px solid crimson;
+  font-size: 13px;
+  font-family: "Quicksand";
+  transition: 0.2s;
+}
+.viewAllBtn2:hover{
+  background-color: crimson;
+  transition: 0.2s;
+  color: white;
+}
+.newArrivalContainer{
+  width: 90%;
+  margin-top: 20px !important;
+  margin: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.naTxtX, .tsText, .trendingText{
+ font-family: "Cormorant", serif;
+  color: #000000;
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+}
+.newArrivalProductContainer, .topSellingProductContainer, .trendingProductContainer{
+  height: auto;
+  margin: auto;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  overflow: hidden;
+  row-gap: 20px;
+}
+.topSellingContainer{
+  width: 90%;
+  margin-top: 20px !important;
+  margin: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.trendingContainer{
+  width: 90%;
+  margin-top: 20px !important;
+  margin: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.carousel2BoxWeb{
+  padding: 20px;
+  padding-bottom: 0;
+  width: 90%;
+  margin: auto;
+}
+.carousel2BoxMobile{
+  padding: 20px;
+  padding-right: 0;
+  padding-left: 0;
+  padding-bottom: 0;
+  width: 100%;
+  margin: auto;
+}
+.cboContainer{
+      width: 80%;
+    display: flex;
+    margin: auto;
+    gap: 20px;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    justify-content: space-evenly;
+    height: auto;
+}
+.cboContainerOne, .cboContainerTwo{
+  width: 100%;
+  height: auto;
+  gap: 20px;
+  justify-content: center;
+  display: flex;
+}
+.cboTitle{
+  font-family: "Cormorant", serif;
+  font-size: 32px;
+  margin: 0;
+  font-weight: bold;
+}
+.cboFirstImageBox img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cboFirstImageBox{
+  width: 500px;
+  position: relative;
+  overflow: hidden;
+  height: 350px;
+}
+.cboSecondImageBox{
+   width: 600px;
+   gap: 20px;
+  height: 350px;
+  justify-content: center;
+  display: flex;
+}
+.cboInnerImageBoxFirst, .cboInnerImageBoxSecond{
+  position: relative;
+  overflow: hidden;
+  background-color: #646464;
+  width: 300px;
+  height: 350px;
+}
+.cboFirstImageBox img, .cboInnerImageBoxFirst img, .cboInnerImageBoxSecond img{
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+.cboImgoverlay{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.4s ease;
+}
+.cboImgoverlay p {
+  position: absolute;
+  font-family: "Quicksand";
+  cursor: pointer;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  margin: 0;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+}
+.cboFirstImageBox:hover .cboImgoverlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cboFirstImageBox:hover .cboImgoverlay p {
+  opacity: 1;
+  transform: translateY(0);
+}
+.cboInnerImageBoxFirst:hover .cboImgoverlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cboInnerImageBoxFirst:hover .cboImgoverlay p {
+  opacity: 1;
+  transform: translateY(0);
+}
+.cboInnerImageBoxSecond:hover .cboImgoverlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cboInnerImageBoxSecond:hover .cboImgoverlay p {
+  opacity: 1;
+  transform: translateY(0);
+}
+.asideDOCBOTitle{
+   font-family: "Quicksand";
+   font-weight: 550;
+   font-size: 17px;
+}
+.asideUlDOC li{
+  font-family: "Quicksand";
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 500;
+}
+.asideUlDOC{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.nopaText {
+  font-family: "Quicksand";
+  font-weight: 500;
+  font-size: 18px;
+  color: #ad026c;
+}
+.asideUlDOC li{
+  transition: 0.5s;
+}
+.asideUlDOC li:hover{
+  color: crimson;
+  transition: 0.5s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 830px) {
+  .cboContainer{
+    width: 90%;
+  }
+  .cboSecondImageBox{
+    width: 100%;
+  }
+  .cboFirstImageBox{
+    width: 100%;
+  }
+  .cboContainerOne, .cboContainerTwo{
+    flex-direction: column;
+  }
+  .under500MainImageBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  }
+  .productDetailsImageDiv {
+    width: 90%;
+  }
+
+  .purchaseLoaderDiv {
+    width: 80%;
+  }
+
+  .footerContactDetailsBox {
+    background-color: #f3f3f3;
+    width: auto;
+    margin: auto;
+    border: 1px solid rgba(192, 192, 192, 0.199);
+    margin-top: 10px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+  }
+
+  .mobileNumFooter {
+    margin-top: 0;
+  }
+
+  .footerFb,
+  .footerIg,
+  .footerWa {
+    justify-content: center;
+  }
+
+  .footerSocial {
+    margin: auto;
+    display: flex;
+  }
+
+  .footerAddress {
+    text-align: center;
+  }
+
+  .mainProductListRenderBox {
+    width: 90%;
+  }
+
+  .productAllPageHeaderBox {
+    width: 90%;
+  }
+
+  .authActionBtnBox {
+    width: 100%;
+  }
+
+  .authBoxContainer {
+    width: 90%;
+  }
+
+  .signupBox {
+    width: 90%;
+  }
+
+  .loginBox {
+    width: 90%;
+  }
+
+  .productViewBtnsDiv {
+    width: 90%;
+  }
+
+  .productNeedInfoBoxView {
+    width: 90%;
+  }
+
+  .productInfoBoxViewMain {
+    width: 90%;
+  }
+
+  .productInfoViewContainer {
+    width: 90%;
+  }
+
+  .sidePhotoShowBox {
+    width: 90%;
+  }
+
+  .mainPhotoShowDivView {
+    width: 90%;
+    height: auto;
+  }
+
+  .profileEditBox {
+    width: 90%;
+  }
+
+  .profileBoxBtns {
+    width: 90%;
+  }
+
+  .profileInfoContainerBox {
+    width: 90%;
+  }
+
+  .wishlistItemContainer {
+    width: 90%;
+    gap: 10px;
+    row-gap: 20px;
+
+  }
+
+  .cartCardButtonsDiv {
+    width: 100%;
+    padding-top: 10px;
+  }
+
+  .cartCardBody {
+    display: block;
+  }
+
+  .cartItemsBox {
+    width: 90%;
+  }
+
+  .cartHr {
+    width: 90%;
+  }
+
+  .itemsContainerSearched {
+    gap: 0;
+    row-gap: 20px;
+  }
+
+  .searchedItems {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .searchDivBox {
+    animation: expandBox 0.8s ease forwards;
+    animation-delay: 0.5s;
+  }
+
+  @keyframes expandBox {
+    from {
+      width: 177px;
+    }
+
+    to {
+      width: 90%;
+    }
+  }
+
+  .footerContactInfo {
+    padding-left: 0px;
+  }
+
+  .footerIntroText {
+    padding-right: 0px;
+  }
+
+  .logoNameFooter {
+    text-align: center;
+  }
+
+  .footerInfo {
+    gap: 20px;
+    flex-direction: column;
+  }
+
+  .animatedTextBox p {
+    font-size: 32px;
+  }
+
+  .animatedTextBox,
+  .videoBoxHome {
+    width: 100%;
+    flex: auto;
+  }
+
+  .videoAndTextBoxDiv {
+    gap: 20px;
+    flex-direction: column;
+  }
+
+  .productContainer {
+    height: auto;
+  }
+
+  .productShowCaseDiv {
+    width: 90%;
+  }
+
+  .ourProductInfoBoxText {
+    font-size: 18px;
+  }
+
+  .ourProductTitle {
+    font-size: 23px;
+  }
+
+  .apContentBox {
+    flex-direction: column;
+  }
+
+  .apDetailsBox {
+    width: 100%;
+  }
+
+  .apImageSlideBox {
+    width: 100%;
+  }
+
+  .category-box-div {
+    justify-content: center;
+  }
+
+  .category-div {
+    width: 90%;
+  }
+
+  .carouselFirstBox {
+    width: 300px;
+  }
+
+  .mainContentBox {
+    width: 100%;
+    margin: auto;
+  }
+
+  .navigationBar {
+    width: 90%;
+    transform: translate(-50%, 0%);
+    left: 50%;
+    gap: 0;
+    justify-content: space-evenly;
+  }
+
+  .navbar {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media (max-width: 1260px){
+ .cboContainer{
+    width: 90%;
+  }
+  .cboSecondImageBox{
+    width: 100%;
+  }
+  .cboFirstImageBox{
+    width: 100%;
+  }
+  .cboContainerOne, .cboContainerTwo{
+    flex-direction: column;
+  }
+}
